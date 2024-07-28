@@ -6,6 +6,7 @@ RUN go mod init build && \
 
 FROM ubuntu:focal
 ENV DEBIAN_FRONTEND=noninteractive 
+ENV DISPLAY=:0
 
 RUN apt-get update -y && \
     apt-get install -y --no-install-recommends openbox tint2 xdg-utils lxterminal hsetroot tigervnc-standalone-server supervisor && \
@@ -28,3 +29,4 @@ COPY tint2rc /root/.config/tint2/
 
 EXPOSE 8080
 ENTRYPOINT ["/bin/bash", "-c", "/usr/bin/supervisord"]
+
