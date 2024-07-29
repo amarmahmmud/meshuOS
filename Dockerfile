@@ -14,7 +14,7 @@ RUN apt-get update -y && \
 
 RUN apt-get update -y && \
     apt-get install -y --no-install-recommends vim openssh-client wget curl rsync ca-certificates htop tar xzip gzip bzip2 zip unzip && \
-    apt-get install -y --no-install-recommends seamonkey && \
+    apt-get install -y --no-install-recommends falkon && \
     rm -rf /var/lib/apt/lists
 
 COPY --from=easy-novnc-build /bin/easy-novnc /usr/local/bin/
