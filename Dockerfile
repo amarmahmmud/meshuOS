@@ -33,4 +33,4 @@ RUN apt-get update -y && \
     rm -rf /var/lib/apt/lists
 
 EXPOSE 8080
-ENTRYPOINT ["/bin/bash", "-c", "/usr/local/bin/set_resolution.sh"]
+ENTRYPOINT ["/bin/bash", "-c", "/usr/local/bin/supervisord.conf"]
