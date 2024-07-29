@@ -6,15 +6,13 @@ RUN go mod init build && \
 
 FROM ubuntu:focal
 ENV DEBIAN_FRONTEND=noninteractive 
-ENV DISPLAY=:0
 
 RUN apt-get update -y && \
     apt-get install -y --no-install-recommends openbox tint2 xdg-utils lxterminal hsetroot tigervnc-standalone-server supervisor && \
     rm -rf /var/lib/apt/lists
 
 RUN apt-get update -y && \
-    apt-get install -y --no-install-recommends vim openssh-client wget curl rsync ca-certificates htop tar xzip gzip bzip2 zip unzip && \
-    apt-get install -y --no-install-recommends falkon && \
+    apt-get install -y --no-install-recommends vim openssh-client wget curl rsync ca-certificates apulse libpulse0 firefox htop tar xzip gzip bzip2 zip unzip && \
     rm -rf /var/lib/apt/lists
 
 COPY --from=easy-novnc-build /bin/easy-novnc /usr/local/bin/
@@ -22,13 +20,11 @@ COPY supervisord.conf /etc/
 COPY menu.xml /etc/xdg/openbox/
 RUN echo 'hsetroot -solid "#123456" &' >> /etc/xdg/openbox/autostart
 
+RUN mkdir -p /etc/firefox
+RUN echo 'pref("browser.tabs.remote.autostart", false);' >> /etc/firefox/syspref.js
+
 RUN mkdir -p /root/.config/tint2
 COPY tint2rc /root/.config/tint2/
-
-# Add x11-xserver-utils for xrandr
-RUN apt-get update -y && \
-    apt-get install -y --no-install-recommends x11-xserver-utils && \
-    rm -rf /var/lib/apt/lists
 
 EXPOSE 8080
 ENTRYPOINT ["/bin/bash", "-c", "/usr/bin/supervisord"]
