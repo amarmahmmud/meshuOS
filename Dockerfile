@@ -33,4 +33,4 @@ RUN apt-get update -y && \
     rm -rf /var/lib/apt/lists
 
 EXPOSE 8080
-ENTRYPOINT ["/bin/bash", "-c", "/usr/local/bin/supervisord"]
+ENTRYPOINT ["/bin/bash", "-c", "/usr/bin/supervisord"]
