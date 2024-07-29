@@ -27,6 +27,14 @@ RUN echo 'pref("browser.tabs.remote.autostart", false);' >> /etc/firefox/syspref
 RUN mkdir -p /root/.config/tint2
 COPY tint2rc /root/.config/tint2/
 
-EXPOSE 8080
-ENTRYPOINT ["/bin/bash", "-c", "/usr/bin/supervisord"]
+# Add x11-xserver-utils for xrandr
+RUN apt-get update -y && \
+    apt-get install -y --no-install-recommends x11-xserver-utils && \
+    rm -rf /var/lib/apt/lists
 
+# Add script to set screen resolution and start supervisord
+COPY set_resolution.sh /usr/local/bin/
+RUN chmod +x /usr/local/bin/set_resolution.sh
+
+EXPOSE 8080
+ENTRYPOINT ["/bin/bash", "-c", "/usr/local/bin/set_resolution.sh"]
