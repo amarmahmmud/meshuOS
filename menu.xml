@@ -3,31 +3,31 @@
     <menu id="root-menu" label="Openbox 3">
         <item label="Firefox">
             <action name="Execute">
-                <execute>/usr/bin/firefox</execute>
+                <execute>/usr/bin/</execute>
             </action>
         </item>
         <separator />
         <item label="Terminal">
             <action name="Execute">
-                <execute>/usr/bin/x-terminal-emulator</execute>
+                <execute>/usr/bin/</execute>
             </action>
         </item>
         <separator />
         <item label="Python3">
             <action name="Execute">
-                <execute>/usr/bin/x-terminal-emulator -e python3</execute>
+                <execute>/usr/bin/</execute>
             </action>
         </item>
         <separator />
         <item label="Vim">
             <action name="Execute">
-                <execute>/usr/bin/x-terminal-emulator -e vim</execute>
+                <execute>/usr/bin/</execute>
             </action>
         </item>
         <separator />
         <item label="Htop">
             <action name="Execute">
-                <execute>/usr/bin/x-terminal-emulator -e htop</execute>
+                <execute>/usr/bin/</execute>
             </action>
         </item>
     </menu>
