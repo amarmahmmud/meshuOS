@@ -171,12 +171,12 @@ launcher_icon_asb = 100 0 0
 launcher_icon_theme_override = 0
 startup_notifications = 1
 launcher_tooltip = 1
-launcher_item_app = firefox.desktop
-launcher_item_app = python3.8.desktop
-launcher_item_app = lxterminal.desktop
-launcher_item_app = vim.desktop
-launcher_item_app = htop.desktop
-launcher_item_app = tint2conf.desktop
+launcher_item_app = midori.desktop
+launcher_item_app = .desktop
+launcher_item_app = .desktop
+launcher_item_app = .desktop
+launcher_item_app = .desktop
+launcher_item_app = .desktop
 
 #-------------------------------------
 # Clock
