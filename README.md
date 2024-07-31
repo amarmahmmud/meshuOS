@@ -1,2 +1,3 @@
 # meshuOS
-docker based very lightweight firefox env with the access of ligehtweight browser in it and some other cofigraions by defoult
+this is a beginner level project with docker based very lightweight desktop env with the access of midori browser in it and some other cofigraions by defoult
+nothing else
